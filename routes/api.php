@@ -19,5 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('products', function(){
-return 'prouducts data';
+    return 'prouducts data';
 });
