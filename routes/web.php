@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/about', function(){
+    return 'This is about page.';
+});
+
+Route::get('contact', function(){
+    return 'This is contact page.';
+});
+
+Route::get('products/{product_id}/shop/{shop_id}', function($product_id, $shop_id){
+    return 'This is product page for product id '.$product_id.' of shop '.$shop_id.'.';
+});
+
