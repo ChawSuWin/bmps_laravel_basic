@@ -7,30 +7,8 @@
     <title>Products</title>
 </head>
 <body>
-    <ul>
-    
-    <!-- @for($i=0;$i<count($products);$i++)
-            <li>{{$products[$i]}}</li>
-        @endfor -->
-
-        @foreach ($products as $product)
-            <li>Smile {{$product}}</li>
-        @endforeach
-         
-    </ul>
-
-    <ul>
-        @foreach ($products as $key => $product)
-            <li>{{$key}} - {{$product}}</li>
-        @endforeach
-    </ul>
-
-    <ul>
-        @foreach ($products as $key => $product)
-            @if ($key == 1)
-                <li>{{$key}} - {{$product}}</li>
-            @endif
-        @endforeach
-    </ul>
+    <h2>Hello {{$name}}!</h2>
+    <h3>Your age is {{$age}}.</h3>
+   
 </body>
 </html>

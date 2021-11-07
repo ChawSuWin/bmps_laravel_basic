@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\WebFrontend\AboutController;
 use App\Http\Controllers\WebFrontend\ProductController;
@@ -20,7 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', [AboutController::class, 'aboutPage']);
+Route::get('/about', [AboutController::class, 'aboutPage'])->middleware('TestMiddleWare');
 //Laravel 7
 //Route::get('about', 'AboutController@aboutPage');
 
@@ -34,3 +35,7 @@ Route::get('shops', function(){
 
 
 Route::get('products/{product_id}/shop/{shop_id}', [ProductController::class, 'productPage']);
+
+//Route::get('promotions', [Controller::class, 'showPromotions']);
+
+Route::post('api/promotions', [Controller::class, 'showPromotions']);
