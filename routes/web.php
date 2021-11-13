@@ -18,14 +18,21 @@ use App\Http\Controllers\WebFrontend\ProductController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $products=[1, 2, 3, 4, 5];
+    return view('welcome')->with([
+        'data' => $products
+    ]);
 });
 
-Route::get('/about', [AboutController::class, 'aboutPage'])->middleware('TestMiddleWare');
+Route::get('/about', [AboutController::class, 'aboutPage']) -> name(name: 'website.about');
+
+// Route::get('/about', [AboutController::class, 'aboutPage'])->middleware('TestMiddleWare');
 //Laravel 7
 //Route::get('about', 'AboutController@aboutPage');
 
 Route::get('contact', [ContactController::class, 'contactPage']);
+
+Route::get('product/{product_id}', [ProductController::class, 'productDetail'])->name('website.product-detail');
 
 Route::get('products', [ProductController::class, 'productList']);
 

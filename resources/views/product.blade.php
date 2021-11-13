@@ -7,8 +7,10 @@
     <title>Products</title>
 </head>
 <body>
-    <h2>Hello {{$name}}!</h2>
-    <h3>Your age is {{$age}}.</h3>
+    <!-- <h2>Hello {{$name}}!</h2>
+    <h3>Your age is {{$age}}.</h3> -->
    
+
+    <h1>Products Page</h1>
 </body>
 </html>
